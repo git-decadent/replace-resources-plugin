@@ -1,0 +1,22 @@
+{
+  "name": "replace-resources-plugin",
+  "version": "0.0.1",
+  "description": "Copies the source file data to a target file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "replace",
+    "copy",
+    "source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-decadent/replace-resources-plugin.git"
+  },
+  "author": "Egor Skorobogatov",
+  "license": "MIT"
+}
