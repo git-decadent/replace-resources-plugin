@@ -18,5 +18,10 @@
     "url": "git+https://github.com/git-decadent/replace-resources-plugin.git"
   },
   "author": "Egor Skorobogatov",
-  "license": "MIT"
+  "homepage": "https://github.com/git-decadent/replace-resources-plugin",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "webpack": "^4.4.1"
+  }
 }
