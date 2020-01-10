@@ -9,7 +9,7 @@ A webpack plugin to copy data from the source file to a target one
 
 ## Installation
 
-`npm install --save-dev replace-resource-plugin`
+`npm install --save-dev replace-resources-plugin`
 
 ## Usage
 
@@ -32,7 +32,7 @@ module.exports = webpackConfig;
 The plugin requires two parameters:
 
 ```js
-    new ReplaceResourcesPlugin(sourceRegExp, distRegExp),
+new ReplaceResourcesPlugin(sourceRegExp, distRegExp),
 ```
 
 Which must be regular expressions and mean to be used to detect a source file of data and a destination file where the data must be copied to.
