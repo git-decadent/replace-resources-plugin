@@ -1,6 +1,6 @@
 {
   "name": "replace-resources-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Copies the source file data to a target file",
   "main": "index.js",
   "scripts": {
