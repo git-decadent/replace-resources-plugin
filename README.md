@@ -34,9 +34,16 @@ module.exports = webpackConfig;
 
 The plugin requires two parameters:
 
+**sourceRegExp** (*RegExp*)
+**distRegExp** (*RegExp*)
+
 ```js
-new ReplaceResourcesPlugin(sourceRegExp, distRegExp),
+new ReplaceResourcesPlugin(sourceRegExp, distRegExp [, options]),
 ```
 
 Which must be regular expressions and mean to be used to detect a source file of data and a destination file where the data must be copied to.
 The destination regular expression is applied firstly if it matches the file name. If this condition is true then the source regular expression is used to find whether there is the file matching it in the current working directory. If the source file is found the data of it is being copied to a destination one.
+
+**options** *object* - is optional:
+
+**replaceDistFileIfHMR** (boolean = false) - defines if the plugin must process changes that are happening due to [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) on a destination file. By default changes are happening in the runtime and detected by HMR will be ignored in order to avoid infinite loop of replacmemts between source and destination files.

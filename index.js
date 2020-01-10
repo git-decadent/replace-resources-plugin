@@ -1,10 +1,16 @@
 const path = require('path');
 const fs = require('fs');
 
+const defaultOptions = {
+	replaceDistFileIfHMR: false,
+};
+
 class ReplaceResourcesPlugin {
-	constructor(copyFromFileRegExp, copyToFileRegExp) {
+	constructor(copyFromFileRegExp, copyToFileRegExp, options = defaultOptions) {
 		this.copyFromFileRegExp = copyFromFileRegExp;
 		this.copyToFileRegExp = copyToFileRegExp;
+
+		this.listenToHMR = options.replaceDistFileIfHMR;
 	}
 
 	processError(err) {
@@ -64,7 +70,10 @@ class ReplaceResourcesPlugin {
 					}
 
 					try {
-						if (this.copyToFileRegExp.test(result.resource)) {
+						if (
+							this.copyToFileRegExp.test(result.resource) &&
+                            (result.hotUpdate !== true || this.listenToHMR)
+						) {
 							const files = await this.scanDirectory(result.context);
 
 							for (let i = 0; i < files.length; i += 1) {
